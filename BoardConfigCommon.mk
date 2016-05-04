@@ -16,6 +16,10 @@
 
 VENDOR_PATH := device/motorola/msm8916-common
 
+TARGET_RECOVERY_DEVICE_DIRS := \
+    $(VENDOR_PATH) \
+    $(DEVICE_PATH)
+
 TARGET_ARCH := arm
 TARGET_CPU_ABI  := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi

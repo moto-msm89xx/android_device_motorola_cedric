@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2015-2016 The Android Open-Source Project
+# Copyright (C) 2015-2017 The Android Open-Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-VENDOR_PATH := device/motorola/msm8916-common
+VENDOR_PATH := device/motorola/msm8937-common
 
 TARGET_RECOVERY_DEVICE_DIRS := \
     $(VENDOR_PATH) \
@@ -23,7 +23,7 @@ TARGET_RECOVERY_DEVICE_DIRS := \
 TARGET_ARCH := arm
 TARGET_CPU_ABI  := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
-TARGET_CPU_VARIANT := cortex-a7
+TARGET_CPU_VARIANT := cortex-a53
 TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_CPU_SMP := true
 ARCH_ARM_HAVE_TLS_REGISTER := true
@@ -31,9 +31,9 @@ ARCH_ARM_HAVE_TLS_REGISTER := true
 TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
 TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
 
-TARGET_BOARD_PLATFORM := msm8916
+TARGET_BOARD_PLATFORM := msm8937
 
-TARGET_BOOTLOADER_BOARD_NAME := MSM8916
+TARGET_BOOTLOADER_BOARD_NAME := MSM8937
 TARGET_NO_BOOTLOADER := true
 
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom ehci-hcd.park=3 vmalloc=400M androidboot.bootdevice=7824900.sdhci movablecore=160M androidboot.selinux=permissive
@@ -42,15 +42,16 @@ BOARD_RAMDISK_OFFSET := 0x01000000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01000000
 BOARD_CUSTOM_BOOTIMG_MK := $(VENDOR_PATH)/mkbootimg.mk
-TARGET_KERNEL_SOURCE := kernel/motorola/msm8916
+KERNEL_TOOLCHAIN_PREFIX := arm-linux-androidkernel-
+TARGET_KERNEL_SOURCE := kernel/motorola/msm8937
 
-#BOARD_USES_QCOM_HARDWARE := true
+BOARD_USES_QCOM_HARDWARE := true
 TARGET_RECOVERY_QCOM_RTC_FIX := true
 
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
-TARGET_RECOVERY_FSTAB := device/motorola/msm8916-common/twrp.fstab
+TARGET_RECOVERY_FSTAB := device/motorola/msm8937-common/twrp.fstab
 
 RECOVERY_SDCARD_ON_DATA := true
 
@@ -66,5 +67,3 @@ TARGET_RECOVERY_PIXEL_FORMAT := RGB_565
 TW_NEW_ION_HEAP := true
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
 TW_SCREEN_BLANK_ON_BOOT := true
-
-TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun%d/file

@@ -1,4 +1,4 @@
-# Squid TWRP tree for Motorola MSM8916 Family
+# Squid TWRP tree for Motorola MSM8937 Family
 
 ## Dependencies:
 (you probably don't need most of these)
@@ -19,12 +19,16 @@ Create a file .repo/local\_manifests/motorola.xml and paste this in
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-    <project name="sultanqasim/android_device_motorola_msm8916-common" path="device/motorola/msm8916-common" remote="github" revision="twrp" />
-    <project name="sultanqasim/android_device_motorola_surnia" path="device/motorola/surnia" remote="github" revision="twrp" />
-    <project name="sultanqasim/android_device_motorola_osprey" path="device/motorola/osprey" remote="github" revision="twrp" />
-    <project name="sultanqasim/android_device_motorola_merlin" path="device/motorola/merlin" remote="github" revision="twrp" />
-    <project name="sultanqasim/android_device_motorola_lux" path="device/motorola/lux" remote="github" revision="twrp" />
-    <project name="sultanqasim/android_kernel_motorola_msm8916" path="kernel/motorola/msm8916" remote="github" revision="squid_nougat" />
+    <project name="moto8937-twrp/android_device_motorola_msm8937-common" path="device/motorola/msm8937-common" remote="github" revision="twrp" />
+    <project name="moto8937-twrp/android_device_motorola_addison" path="device/motorola/addison" remote="github" revision="twrp" />
+    <project name="moto8937-twrp/android_device_motorola_albus" path="device/motorola/albus" remote="github" revision="twrp" />
+    <project name="moto8937-twrp/android_device_motorola_cedric" path="device/motorola/cedric" remote="github" revision="twrp" />
+    <project name="moto8937-twrp/android_device_motorola_montana" path="device/motorola/montana" remote="github" revision="twrp" />
+    <project name="moto8937-twrp/android_device_motorola_owens" path="device/motorola/owens" remote="github" revision="twrp" />
+    <project name="moto8937-twrp/android_device_motorola_perry" path="device/motorola/perry" remote="github" revision="twrp" />
+    <project name="moto8937-twrp/android_device_motorola_potter" path="device/motorola/potter" remote="github" revision="twrp" />
+    <project name="moto8937-twrp/android_device_motorola_sanders" path="device/motorola/sanders" remote="github" revision="twrp" />
+    <project name="moto8937/android_kernel_motorola_msm8937" path="kernel/motorola/msm8937" remote="github" revision="cm-14.1" />
     <project name="LineageOS/android_device_qcom_common" path="device/qcom/common" remote="github" revision="cm-14.1" />
 </manifest>
 ```
@@ -37,7 +41,7 @@ repo sync
 ## Building:
 ```
 source build/envsetup.sh
-breakfast osprey
+breakfast perry # or your device
 make clean
-make -j5 recoveryimage
+make -j30 recoveryimage
 ```

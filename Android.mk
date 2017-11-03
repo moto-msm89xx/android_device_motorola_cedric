@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-ifneq ($(filter lux merlin osprey surnia, $(TARGET_DEVICE)),)
+ifneq ($(filter addison albus cedric montana owens perry potter sanders, $(TARGET_DEVICE)),)
 
 LOCAL_PATH := $(call my-dir)
 

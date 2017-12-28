@@ -340,3 +340,4 @@
 
 #Egistec fingerprint
 /dev/esfp0		  0660   system     system
+

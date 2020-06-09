@@ -14,10 +14,15 @@
 # limitations under the License.
 #
 
-ifneq ($(filter montana,$(TARGET_DEVICE)),)
+# Inherit from those products. Most specific first.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-LOCAL_PATH := $(call my-dir)
+# Inherit from our custom product configuration
+$(call inherit-product, vendor/omni/config/common.mk)
 
-include $(call all-makefiles-under,$(LOCAL_PATH))
-
-endif
+# Device identifier. This must come after all inclusions
+PRODUCT_DEVICE := montana
+PRODUCT_NAME := omni_montana
+PRODUCT_BRAND := Motorola
+PRODUCT_MODEL := Moto G5S
+PRODUCT_MANUFACTURER := Motorola

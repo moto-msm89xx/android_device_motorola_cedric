@@ -89,3 +89,4 @@ TW_SCREEN_BLANK_ON_BOOT := true
 TW_THEME := portrait_hdpi
 TW_EXTRA_LANGUAGES := true
 TW_EXCLUDE_TWRPAPP := true
+TW_INCLUDE_FB2PNG := true

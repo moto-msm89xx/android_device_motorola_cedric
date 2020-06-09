@@ -41,6 +41,8 @@ TW_INCLUDE_CRYPTO := true
 # File systems
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
+TW_INCLUDE_FUSE_EXFAT := true # exFAT support
+TW_INCLUDE_FUSE_NTFS := true # NTFS support
 
 # Kernel
 TARGET_KERNEL_ARCH := arm64

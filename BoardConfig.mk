@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-DEVICE_PATH := device/motorola/montana
+DEVICE_PATH := device/motorola/cedric
 
 # Architecture
 TARGET_ARCH := arm64
@@ -62,7 +62,7 @@ TARGET_PREBUILT_DTB := $(DEVICE_PATH)/prebuilt/dt.img
 TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/kernel
 BOARD_CUSTOM_BOOTIMG_MK := $(DEVICE_PATH)/mkbootimg.mk
 else
-TARGET_KERNEL_CONFIG := montana_defconfig
+TARGET_KERNEL_CONFIG := cedric_defconfig
 TARGET_KERNEL_SOURCE := kernel/motorola/msm8937
 endif
 

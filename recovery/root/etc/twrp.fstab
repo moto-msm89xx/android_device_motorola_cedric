@@ -10,6 +10,8 @@
 /persist      ext4          /dev/block/bootdevice/by-name/persist        flags=fsflags=noatime,nosuid,nodev,barrier=1,noauto_da_alloc;mounttodecrypt;backup=1
 /firmware     ext4          /dev/block/bootdevice/by-name/modem          flags=fsflags=ro,nosuid,nodev,barrier=0;mounttodecrypt
 /misc         emmc          /dev/block/bootdevice/by-name/misc
+/modemst1     emmc          /dev/block/bootdevice/by-name/modemst1       flags=backup=1;display="Modem Cache"
+/modemst2     emmc          /dev/block/bootdevice/by-name/modemst2       flags=backup=1;subpartitionof=/modemst1
 
 /external_sd  auto          /dev/block/mmcblk1p1  /dev/block/mmcblk1     flags=display="MicroSD Card";storage;wipeingui;removable
 /usb_otg      auto          /dev/block/sda1       /dev/block/sda         flags=display="USB-OTG";storage;wipeingui;removable

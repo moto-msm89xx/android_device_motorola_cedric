@@ -1,45 +1,22 @@
-## How To Compile TWRP For Cedric ##
-------------------
+Device Tree for Moto G5 (Cedric)
+===========================================
 
-Sync Omni Repo
+The Motorola Moto G5 (codenamed _"cedric"_) is a mid-range smartphone from Motorola mobility.
+It was announced on February 2017.
 
-First you need to download and sync the omni source
-	
-		repo init -u git://github.com/omnirom/android.git -b android-7.1
-		repo sync
-	
+Basic   | Spec Sheet
+-------:|:-------------------------
+CPU     | Quad-core 1.4 GHz Cortex-A53 && Quad-core 1.1 GHz Cortex-A53
+Chipset | Qualcomm MSM8937 Snapdragon 430
+GPU     | Adreno 505
+Memory  | 2/3 GB RAM
+Shipped Android Version | 7.0
+Storage | 16/32 GB
+MicroSD | Up to 256 GB
+Battery | Li-Ion 2800mAh battery
+Display | 1080 x 1920 pixels, 5 inches (~441 ppi pixel density)
+Camera  | 13 MP, phase detection autofocus, LED flash
 
-## Clone Cedric twrp repo into your working folder ##
----------------
+Copyright 2017 - The LineageOS Project.
 
-From a terminal prompt inside your working folder
-
-	git clone https://github.com/Theitfixer85/android_device_motorola_cedric -b twrp device/motorola/cedric
-	
-
-## Clone other required repos ##
----------------
-	git clone https://github.com/Wzedlare/android_vendor_motorola_cedric -b cm-14.1 vendor/motorola/cedric
-	git clone https://github.com/CyanogenMod/android_device_qcom_common -b cm-14.1 deivce/qcom/common
-	
-	
-## Start the build ##
----------------
-Type the following in a terminal prompt inside from inside the root of your working folder
-
-	source build/envsetup.sh
-	lunch
-	select omni_cedric-userdebug
-	make recoveryimage
-	
-	
-## Flashing the recovery ##
----------------
-The recovery will be outputted to the following folder
-
-	out/target/product/cedric/recovery.img
-	
-Assuming you have fastboot all setup put your phone into bootloader mode and type the following in a terminal prompt within the folder containing the recovery file - or you can drag and drop the file into the terminal window to auto complete the path
-	
-	fastboot flash recovery recovery.img
-	
+![Moto G5](https://i.gadgets360cdn.com/large/moto_g5_sapphire_blue_1490185457740.png?output-quality=80 "Moto G5")

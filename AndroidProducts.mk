@@ -14,5 +14,4 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-	$(LOCAL_DIR)/omni_cedric.mk \
-	$(LOCAL_DIR)/full_cedric.mk
+    $(LOCAL_DIR)/omni_cedric.mk

@@ -23,9 +23,9 @@ BOARD_KERNEL_BASE := 0x80000000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_TAGS_OFFSET := 0x00000100
 BOARD_RAMDISK_OFFSET := 0x01000000
-BOARD_MKBOOTIMG_ARGS :=  --ramdisk_offset 0x01000000 --tags_offset 0x00000100 --kernel_offset 0x00008000 --second_offset 0x00f00000 --dt device/motorola/cedric/dt.img
+BOARD_MKBOOTIMG_ARGS :=  --ramdisk_offset 0x01000000 --tags_offset 0x00000100 --kernel_offset 0x00008000 --second_offset 0x00f00000 --dt device/motorola/cedric/prebuilt/dt.img
 BOARD_CUSTOM_BOOTIMG_MK := device/motorola/cedric/mkbootimg.mk
-TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/kernel
+TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/prebuilt/kernel
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 131072

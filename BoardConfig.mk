@@ -1,40 +1,45 @@
 DEVICE_PATH := device/motorola/cedric
 
-TARGET_BOARD_VENDOR := motorola
-
 # Architecture
-TARGET_ARCH := arm
-TARGET_ARCH_VARIANT := armv7-a-neon
-TARGET_CPU_ABI := armeabi-v7a
-TARGET_CPU_ABI2 := armeabi
+TARGET_ARCH := arm64
+TARGET_ARCH_VARIANT := armv8-a
+TARGET_CPU_ABI := arm64-v8a
+TARGET_CPU_ABI2 :=
 TARGET_CPU_VARIANT := cortex-a53
-TARGET_CPU_SMP := true
 
+TARGET_2ND_ARCH := arm
+TARGET_2ND_ARCH_VARIANT := armv7-a-neon
+TARGET_2ND_CPU_ABI := armeabi-v7a
+TARGET_2ND_CPU_ABI2 := armeabi
+TARGET_2ND_CPU_VARIANT := cortex-a53
+
+# Board
 TARGET_BOARD_PLATFORM := msm8937
-TARGET_BOARD_PLATFORM_GPU := qcom-adreno505
-
-# Bootloader
-TARGET_BOOTLOADER_BOARD_NAME := msm8937
+TARGET_BOOTLOADER_BOARD_NAME := MSM8937
 TARGET_NO_BOOTLOADER := true
 
 # Kernel
-BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom user_debug=30 msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 earlycon=msm_hsl_uart,0x78B0000 vmalloc=400M androidboot.selinux=permissive
+TARGET_KERNEL_ARCH := arm64
+TARGET_KERNEL_HEADER_ARCH := arm64
+BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom ehci-hcd.park=3 vmalloc=400M androidboot.bootdevice=7824900.sdhci movablecore=160M androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x80000000
-BOARD_KERNEL_PAGESIZE := 2048
-BOARD_KERNEL_TAGS_OFFSET := 0x00000100
 BOARD_RAMDISK_OFFSET := 0x01000000
-BOARD_MKBOOTIMG_ARGS :=  --ramdisk_offset 0x01000000 --tags_offset 0x00000100 --kernel_offset 0x00008000 --second_offset 0x00f00000 --dt $(DEVICE_PATH)/prebuilt/dt.img
-BOARD_CUSTOM_BOOTIMG_MK := $(DEVICE_PATH)/mkbootimg.mk
+BOARD_KERNEL_PAGESIZE := 2048
+BOARD_MKBOOTIMG_ARGS := --ramdisk_offset $(BOARD_RAMDISK_OFFSET)
+BOARD_KERNEL_IMAGE_NAME := Image.gz
+BOARD_KERNEL_SEPARATED_DT := true
+ifneq ($(WITH_KERNEL_SOURCE),true)
+TARGET_PREBUILT_DTB := $(DEVICE_PATH)/prebuilt/dt.img
 TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/kernel
+BOARD_CUSTOM_BOOTIMG_MK := $(DEVICE_PATH)/mkbootimg.mk
+else
+TARGET_KERNEL_CONFIG := cedric_defconfig
+TARGET_KERNEL_SOURCE := kernel/motorola/msm8937
+endif
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 131072
-BOARD_BOOTIMAGE_PARTITION_SIZE := 67108864
-BOARD_CACHEIMAGE_PARTITION_SIZE := 268435456
-BOARD_PERSISTIMAGE_PARTITION_SIZE := 33554432
-BOARD_RECOVERYIMAGE_PARTITION_SIZE := 67108864
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 3221225472
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 26301931008
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 16879616
 
 # File systems
 BOARD_HAS_LARGE_FILESYSTEM := true
@@ -57,9 +62,4 @@ TW_INPUT_BLACKLIST := "hbtp_vm"
 #TW_NEW_ION_HEAP := true
 TW_THEME := portrait_hdpi
 TW_SCREEN_BLANK_ON_BOOT := true
-TW_DEFAULT_EXTERNAL_STORAGE := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
-
-# Encryption support
-TW_INCLUDE_CRYPTO := true
-TARGET_HW_DISK_ENCRYPTION := true

@@ -15,9 +15,15 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_cedric.mk
+    $(LOCAL_DIR)/lineage_cedric.mk \
+    $(LOCAL_DIR)/aosp_cedric.mk
 
 COMMON_LUNCH_CHOICES := \
     lineage_cedric-user \
     lineage_cedric-userdebug \
-    lineage_cedric-eng
+    lineage_cedric-eng \
+    aosp_cedric-user \
+    aosp_cedric-userdebug \
+    aosp_cedric-eng
+
+

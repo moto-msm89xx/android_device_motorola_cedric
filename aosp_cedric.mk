@@ -27,3 +27,5 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 BUILD_FINGERPRINT := google/walleye/walleye:8.1.0/OPM1.171019.011/4448085:user/release-keys
 
 PRODUCT_GMS_CLIENTID_BASE := android-motorola
+
+TARGET_GAPPS_ARCH := arm64

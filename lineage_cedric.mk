@@ -24,6 +24,6 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     PRIVATE_BUILD_DESC="cedric_retail-user 8.1.0 OPP28.85-19-4-2 3447de release-keys" \
     PRODUCT_NAME="cedric_retail"
 
-BUILD_FINGERPRINT := motorola/cedric_retail/cedric:8.1.0/OPP28.85-19-4-2/3447de:user/release-keys
+BUILD_FINGERPRINT := google/walleye/walleye:8.1.0/OPM1.171019.011/4448085:user/release-keys
 
 PRODUCT_GMS_CLIENTID_BASE := android-motorola

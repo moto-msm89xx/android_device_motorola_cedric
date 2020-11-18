@@ -16,7 +16,8 @@
 
 PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/lineage_cedric.mk \
-    $(LOCAL_DIR)/aosp_cedric.mk
+    $(LOCAL_DIR)/aosp_cedric.mk \
+    $(LOCAL_DIR)/corvus_cedric.mk
 
 COMMON_LUNCH_CHOICES := \
     lineage_cedric-user \
@@ -24,6 +25,8 @@ COMMON_LUNCH_CHOICES := \
     lineage_cedric-eng \
     aosp_cedric-user \
     aosp_cedric-userdebug \
-    aosp_cedric-eng
-
+    aosp_cedric-eng \
+    corvus_cedric-user \
+    corvus_cedric-userdebug \
+    corvus_cedric-eng
 

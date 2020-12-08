@@ -10,25 +10,6 @@ etc/acdbdata/Hdmi_cal.acdb:vendor/etc/acdbdata/Hdmi_cal.acdb
 etc/acdbdata/Headset_cal.acdb:vendor/etc/acdbdata/Headset_cal.acdb
 etc/acdbdata/Speaker_cal.acdb:vendor/etc/acdbdata/Speaker_cal.acdb
 
-# Camera
-lib/libmot_lux_standardization.so:vendor/lib/libmot_lux_standardization.so
-vendor/lib/libchromaflash.so
-vendor/lib/libgralloc1.so
-vendor/lib/libjpegdhw.so
-vendor/lib/libjpegdmahw.so
-vendor/lib/libjpegehw.so
-vendor/lib/libllvd_smore.so
-vendor/lib/libmmcamera_cac3_lib.so
-vendor/lib/libmmcamera_ppeiscore.so|6472f5d95051544eb26fd2eae8becd5e4d47e847
-vendor/lib/liboptizoom.so
-vendor/lib/libqomx_core.so
-vendor/lib/libqomx_jpegenc.so
-vendor/lib/libqomx_jpegenc_pipe.so
-vendor/lib/libremosaic_daemon.so
-vendor/lib/libseemore.so
-vendor/lib/libtrueportrait.so
-vendor/lib/libubifocus.so
-
 # Camera chromatix
 vendor/lib/libchromatix_mot_imx258_common.so
 vendor/lib/libchromatix_mot_imx258_cpp_hfr_120.so

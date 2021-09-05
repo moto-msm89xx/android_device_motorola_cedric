@@ -1,0 +1,1 @@
+genfscon sysfs /devices/platform/soc/7af6000.spi/spi_master/spi6 u:object_r:sysfs_devices_fingerprint:s0
